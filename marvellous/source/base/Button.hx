@@ -5,14 +5,17 @@ import flixel.FlxSprite;
 import flixel.text.FlxText;
 
 class Button extends FlxText {
-	var callback : Button->Void;
+	private var callback : Button->Void;
+	private var min : Int = 20;
+	private var mid : Int = 25;
+	private var max : Int = 30;
 
 	public function new(x : Float, y : Float, label : String, _callback : Button->Void) {
-		super(x, y, FlxG.width, label, 30);
+		super(x, y, FlxG.width, label, max);
 
 		width = textField.textWidth+textField.textWidth/label.length;
 		alignment = "center";
-		size = 20;
+		size = min;
 
 		callback = _callback;
 	}
@@ -24,19 +27,19 @@ class Button extends FlxText {
 		super.update();
 
 		if(contains(FlxG.mouse.screenX, FlxG.mouse.screenY)) {
-			size = 25;
+			size = mid;
 			if(FlxG.mouse.pressed) {
-				size = 30;
+				size = max;
 				bold = true;
 			} else {
-				size = 25;
+				size = mid;
 				bold = false;
 			}
 
-			if(FlxG.mouse.justPressed)
+			if(FlxG.mouse.justReleased)
 				callback(this);
 		} else 
-			size = 20;
+			size = min;
 	}
 
 	override public function draw() : Void {
