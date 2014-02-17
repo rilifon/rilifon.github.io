@@ -7,8 +7,8 @@ import flixel.text.FlxText;
 class Button extends FlxText {
 	private var callback : Button->Void;
 	private var min : Int = 20;
-	private var mid : Int = 25;
-	private var max : Int = 30;
+	private var mid : Int = 30;
+	private var max : Int = 40;
 
 	public function new(x : Float, y : Float, label : String, _callback : Button->Void) {
 		super(x, y, FlxG.width, label, max);
