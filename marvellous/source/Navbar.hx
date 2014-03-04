@@ -10,6 +10,7 @@ import base.State;
  * Therefore I'm including them manually. 
  */
 import states.GamesState;
+import states.TeamState;
 
 private class NavButton extends Button {
 	public var state : Bool;

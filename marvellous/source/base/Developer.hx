@@ -1,0 +1,40 @@
+package base;
+
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.text.FlxText;
+
+class Developer extends flixel.FlxObject {
+	var text : FlxText;
+	var image : FlxSprite;
+
+	public function new(y : Float, title : String, role : String, _text : String, img_path : String) {
+		super(FlxG.width/10+50, y);
+
+		image = new FlxSprite(x, y);
+		image.makeGraphic(200, 200, 0xffffffff);
+
+		text = new FlxText(x+image.width+50, y, 1500, title+"\n"+role+"\n\n"+_text, 18);
+		//image.loadGraphic(img_path, false);
+	}
+
+	override public function draw() : Void {
+		super.draw();
+
+		text.draw();
+		image.draw();
+	}
+
+	override public function update() : Void {
+		super.update();
+
+		text.update();
+		image.update();
+	}
+
+	override private function get_width() : Float
+		return (text.textField.textWidth+text.textField.textWidth/text.text.length)+image.width;
+
+	override private function get_height() : Float
+		return text.height+image.height;
+}

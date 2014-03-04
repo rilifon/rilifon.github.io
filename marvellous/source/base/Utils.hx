@@ -4,7 +4,7 @@ import flixel.FlxSprite;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxPoint;
 
-class UsingUtils {
+class Utils {
 	public static function fadeOut(t : FlxSprite, delay : Float, duration : Float, destroyAfter : Bool = false) : FlxSprite {
 		var opts = { complete: destroyAfter? function(_) { t.destroy(); } : null, type : FlxTween.ONESHOT };
 		if(delay == 0) FlxTween.color(duration, t.color, t.color, 1, 0, opts, t);
@@ -29,4 +29,8 @@ class UsingUtils {
 
 	public static function normalize(p : FlxPoint) : FlxPoint
 		return mult(p, 1/length(p));
+
+	public static function sign(x : Float) : Int
+		return x == 0? 0 : x > 0? 1 : -1;
+
 }
