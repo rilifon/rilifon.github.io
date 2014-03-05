@@ -16,6 +16,7 @@ class Button extends FlxText {
 		width = textField.textWidth+textField.textWidth/label.length;
 		alignment = "center";
 		size = min;
+		color = Reg.text_color;
 
 		callback = _callback;
 	}

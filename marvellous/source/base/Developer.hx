@@ -12,7 +12,7 @@ class Developer extends flixel.FlxObject {
 		super(FlxG.width/10+50, y);
 
 		image = new FlxSprite(x, y);
-		image.makeGraphic(200, 200, 0xffffffff);
+		image.loadGraphic(img_path, false);
 
 		text = new FlxText(x+image.width+50, y, 1500, title+"\n"+role+"\n\n"+_text, 18);
 		//image.loadGraphic(img_path, false);

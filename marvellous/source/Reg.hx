@@ -8,5 +8,6 @@ import flixel.util.FlxSave;
  * free to simply ignore it or change it in any way you like.
  */
 class Reg {
-	public static var background_color : Int = 0xff1a148e;
+	public static var background_color : Int = 0xff608FBD;
+	public static var text_color : Int = 0xff164473;
 }

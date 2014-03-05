@@ -27,7 +27,7 @@ class IndexState extends State {
 		#end
 
 		text = new FlxText(0, 400, 1024, TextDatabase.getValue("home.main"), 15);
-
+		text.color = Reg.text_color;
 		text.x = (FlxG.width-text.textField.textWidth)/2;
 
 		add(new Banner());
