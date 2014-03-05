@@ -46,9 +46,9 @@ class TeamState extends State {
 	override public function create() : Void {
 		devs = new FlxGroup();
 
-		devs.add(new RenatoImpl(350));
-		devs.add(new RicaImpl(600));
-		devs.add(new YanImpl(850));
+		devs.add(new RenatoImpl(400));
+		devs.add(new RicaImpl(650));
+		devs.add(new YanImpl(900));
 
 		add(new Banner());
 		add(new Navbar(300));

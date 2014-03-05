@@ -14,7 +14,8 @@ class Developer extends flixel.FlxObject {
 		image = new FlxSprite(x, y);
 		image.loadGraphic(img_path, false);
 
-		text = new FlxText(x+image.width+50, y, 1500, title+"\n"+role+"\n\n"+_text, 18);
+		text = new FlxText(x+150, y, 1500, title+"\n"+role+"\n\n"+_text, 18);
+		text.color = Reg.text_color;
 		//image.loadGraphic(img_path, false);
 	}
 
