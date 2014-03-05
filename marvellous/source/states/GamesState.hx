@@ -11,8 +11,8 @@ class GamesState extends State {
 	override public function create() : Void {
 		games = new FlxGroup();
 
-		games.add(new covers.NaomiCover(50, 450));
-		games.add(new covers.PsychoCover(450, 450));
+		games.add(new covers.NaomiCover(FlxG.width/2-175, 400));
+		games.add(new covers.PsychoCover(FlxG.width/2-175, 750));
 		
 		add(new Banner());
 		add(new Navbar(300));
