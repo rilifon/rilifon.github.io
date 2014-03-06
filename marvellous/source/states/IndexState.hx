@@ -26,8 +26,8 @@ class IndexState extends State {
 			FlxG.mouse.visible = true;
 		#end
 
-		text = new FlxText(0, 400, 1024, TextDatabase.getValue("home.main"), 15);
-
+		text = new FlxText(0, 400, 1024, TextDatabase.getValue("home.main"), 50);
+		text.color = Reg.text_color;
 		text.x = (FlxG.width-text.textField.textWidth)/2;
 
 		add(new Banner());

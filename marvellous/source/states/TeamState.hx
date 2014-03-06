@@ -12,7 +12,7 @@ private class RenatoImpl extends Developer {
 			"Renato \"Totoro\" Lui Geh",
 			"Code and Web Design",
 			"Appreciator of fine canned beans.", 
-			"assets/images/devs/renato.png");
+			"assets/images/avatars/renato.png");
 }
 
 private class RicaImpl extends Developer {
@@ -28,7 +28,7 @@ private class RicaImpl extends Developer {
 			"he creates the most spectacular chef-d'oeuvre. And with his most accurate ears he " +
 			"can turn the most chaotic of sounds into a true melody.\n" + 
 			"This true maestro is envied by many. Admired by all.",
-			"assets/images/devs/rica.png");
+			"assets/images/avatars/rica.png");
 }
 
 private class YanImpl extends Developer {
@@ -36,8 +36,8 @@ private class YanImpl extends Developer {
 		super(y,
 			"Yan \"Yan\" Soares Couto",
 			"Code, code and more code", 
-			"A_Beautiful_Mind_1080p.mkv",
-			"assets/images/devs/yan.png");
+			"\"Relaxa. Seriao, relaxa cara.\" - Yan",
+			"assets/images/avatars/yan.png");
 }
 
 class TeamState extends State {
