@@ -34,7 +34,7 @@ class PsychoCover extends Cover {
 	private var palette : FlxTween;
 
 	public function new(x : Float, y : Float) {
-		super(x, y, "assets/images/covers/psycho/psycho.png", "PsychoState");
+		super(x, y, "assets/images/covers/psycho/psycho.png", "PsychoState", TextDatabase.getValue("games.psycho"));
 
 		background = new FlxSprite(x, y);
 

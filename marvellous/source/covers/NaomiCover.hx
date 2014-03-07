@@ -27,7 +27,7 @@ class NaomiCover extends Cover {
 	private var stars : FlxTypedGroup<Star>;
 
 	public function new(x : Float, y : Float) {
-		super(x, y, "assets/images/covers/naomi/naomi.png", "NaomiState");
+		super(x, y, "assets/images/covers/naomi/naomi.png", "NaomiState", TextDatabase.getValue("games.naomi"));
 
 		stars = new FlxTypedGroup<Star>();
 
