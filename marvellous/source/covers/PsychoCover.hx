@@ -39,7 +39,7 @@ class PsychoCover extends Cover {
 
 		background = new FlxSprite(x, y);
 
-		background.makeGraphic(Std.int(width), Std.int(height), 0xffa85812);
+		background.makeGraphic(Std.int(width), Std.int(height), 0xff803e04);
 
 		palette = FlxTween.color(background, 6, color, 0xff1aa1c7, 1, 1, {type: FlxTween.PINGPONG});
 		palette.active = false;
