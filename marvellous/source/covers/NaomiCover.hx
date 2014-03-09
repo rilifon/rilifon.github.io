@@ -6,6 +6,7 @@ import flixel.group.FlxTypedGroup;
 import flixel.tweens.FlxTween;
 import base.Cover;
 import base.Timer;
+import base.TextDatabase;
 
 private class Star extends FlxSprite {
 	private var fader : FlxTween;

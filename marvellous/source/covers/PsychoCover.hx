@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.tweens.FlxTween;
 import base.Cover;
+import base.TextDatabase;
 
 private class Ball extends FlxSprite {
 	private var path : FlxTween;
