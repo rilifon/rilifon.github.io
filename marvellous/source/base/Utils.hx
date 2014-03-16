@@ -27,10 +27,18 @@ class Utils {
 		return p;
 	}
 
-	public static function normalize(p : FlxPoint) : FlxPoint
+	public static inline function abs(x : Float) : Float
+		return x<0?-x:x;
+
+	public static inline function normalize(p : FlxPoint) : FlxPoint
 		return mult(p, 1/length(p));
 
-	public static function sign(x : Float) : Int
+	public static inline function sign(x : Float) : Int
 		return x == 0? 0 : x > 0? 1 : -1;
 
+	public static inline function brighten(x : Int) : Int
+		return abs((x + 1 + 256 + 613)%0xffffffff);
+
+	public static inline function darken(x : Int) : Int
+		return abs((x - 1 - 256 - 613)%0xffffffff);
 }

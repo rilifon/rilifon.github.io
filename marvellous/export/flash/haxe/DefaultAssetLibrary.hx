@@ -60,6 +60,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/covers/psycho/psycho.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("assets/images/dialog.png", __ASSET__assets_images_dialog_png);
 		type.set ("assets/images/dialog.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("assets/images/icon.ico", __ASSET__assets_images_icon_ico);
+		type.set ("assets/images/icon.ico", Reflect.field (AssetType, "binary".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -88,6 +90,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/covers/psycho/psycho.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("assets/images/dialog.png", "assets/images/dialog.png");
 		type.set ("assets/images/dialog.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/icon.ico", "assets/images/icon.ico");
+		type.set ("assets/images/icon.ico", Reflect.field (AssetType, "binary".toUpperCase ()));
 		
 		
 		#else
@@ -543,11 +547,13 @@ class __ASSET__assets_images_covers_naomi_star_png extends flash.display.BitmapD
 class __ASSET__assets_images_covers_psycho_ball_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_covers_psycho_psycho_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_dialog_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_icon_ico extends flash.utils.ByteArray { }
 
 
 #elseif html5
 
 class __ASSET__assets_data_fonts_nevis_ttf extends flash.text.Font { }
+
 
 
 

@@ -26,7 +26,7 @@ class IndexState extends State {
 			FlxG.mouse.visible = true;
 		#end
 
-		text = new FlxText(0, 400, 1024, TextDatabase.getValue("home.main"), 50);
+		text = new FlxText(0, 400, 1024, TextDatabase.getValue("home.main"), 20);
 		text.color = Reg.text_color;
 		text.x = (FlxG.width-text.textField.textWidth)/2;
 
