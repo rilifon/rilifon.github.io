@@ -11,7 +11,7 @@ private class RenatoImpl extends Developer {
 		super(y, 
 			"Renato \"Totoro\" Lui Geh",
 			"Code and Web Design",
-			"Appreciator of fine canned beans.", 
+			"A struggling misunderstood boy in a very unsympathetic and unfriendly society of lies.", 
 			"assets/images/avatars/renato.png");
 }
 
@@ -36,7 +36,15 @@ private class YanImpl extends Developer {
 		super(y,
 			"Yan \"Yan\" Soares Couto",
 			"Code, code and more code", 
-			"\"Relaxa. Seriao, relaxa cara.\" - Yan",
+			"\"Peculiar\".\nThis is the perfect word to describe such a genius of mathematics and coding.\n" +
+			"A true stereotype of the mad genius, this highly troubled mind is constantly fighting its primitive " +
+			"urges of world domination. But instead of formulating an evil, ingenius plan to enslave humanity, " +
+			"Yan focuses all his energy into creating not only innovative, thought-provoking games, but also " +
+			"the most gruesome, poorly documented yet incredibly brilliant and efficient algorithms. " +
+			"Unstoppable, his only weakness is his heart. His friendly, forgiving and loveable character is " +
+			"what prevents him from becoming a mad scientist willing to sacrifice all humanity in exchange for " +
+			"a glass of ice cold Cotuba.\n" +
+			"Science has yet to study his mind. But for now, let his mind study science.",
 			"assets/images/avatars/yan.png");
 }
 
