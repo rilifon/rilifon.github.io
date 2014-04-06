@@ -11,7 +11,14 @@ private class RenatoImpl extends Developer {
 		super(y, 
 			"Renato \"Totoro\" Lui Geh",
 			"Code and Web Design",
-			"A struggling misunderstood boy in a very unsympathetic and unfriendly society of lies.", 
+			"Beautiful and majestic. Misterious yet mystifying. Enthralling and profoundly captivating\n" +
+			"Those are a few words that a wise man once used to describe the magical scene that is Renato " +
+			"programming. A master of Java, Haxe and Visual Basic, a lover of the finest tea and arts, a companion " +
+			"of excellence in bridge, a friend of all living things. Those who are lucky to be embraced by his " +
+			"tenderness and kindness know that, even in the darker hours, Totoro will always face life with a smile " +
+			"in his face and a rose in his hand. He can create the most beautiful site while composing sweet melodies " +
+			"with his trusted violin. Give him a two-hour cd of 80's music and he will make the most astonishing game you'll ever play.\n" +
+			"More than a friend, his is an example for us all. Totoro, he will never give you up." , 
 			"assets/images/avatars/renato.png");
 }
 
