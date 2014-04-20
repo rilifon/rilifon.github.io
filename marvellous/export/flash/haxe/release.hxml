@@ -1,8 +1,8 @@
 -main ApplicationMain 
--lib openfl
 -lib flixel
+-lib openfl
 -cp source
--D tools=1.2.7
+-D tools=1.2.9
 -D FLX_NO_DEBUG
 -D web
 -swf-version 11.2
