@@ -69,6 +69,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#elseif html5
 		
+<<<<<<< HEAD
 		addEmbed("assets/data/fonts/Nevis.ttf", "font", __ASSET__assets_data_fonts_nevis_ttf);
 		addExternal("assets/data/text/index/main.txt", "text", "assets/data/text/index/main.txt");
 		addExternal("assets/images/avatars/renato.png", "image", "assets/images/avatars/renato.png");
@@ -83,6 +84,34 @@ class DefaultAssetLibrary extends AssetLibrary {
 		addExternal("assets/images/covers/psycho/psycho.png", "image", "assets/images/covers/psycho/psycho.png");
 		addExternal("assets/images/dialog.png", "image", "assets/images/dialog.png");
 		addExternal("assets/images/icon.ico", "binary", "assets/images/icon.ico");
+=======
+		className.set ("assets/data/fonts/Nevis.ttf", __ASSET__assets_data_fonts_nevis_ttf);
+		type.set ("assets/data/fonts/Nevis.ttf", Reflect.field (AssetType, "font".toUpperCase ()));
+		path.set ("assets/data/text/index/main.txt", "assets/data/text/index/main.txt");
+		type.set ("assets/data/text/index/main.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("assets/images/avatars/renato.png", "assets/images/avatars/renato.png");
+		type.set ("assets/images/avatars/renato.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/avatars/rica.png", "assets/images/avatars/rica.png");
+		type.set ("assets/images/avatars/rica.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/avatars/yan.png", "assets/images/avatars/yan.png");
+		type.set ("assets/images/avatars/yan.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/banner.png", "assets/images/banner.png");
+		type.set ("assets/images/banner.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/construction.jpg", "assets/images/construction.jpg");
+		type.set ("assets/images/construction.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/covers/naomi/naomi.png", "assets/images/covers/naomi/naomi.png");
+		type.set ("assets/images/covers/naomi/naomi.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/covers/naomi/star.png", "assets/images/covers/naomi/star.png");
+		type.set ("assets/images/covers/naomi/star.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/covers/psycho/ball.png", "assets/images/covers/psycho/ball.png");
+		type.set ("assets/images/covers/psycho/ball.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/covers/psycho/psycho.png", "assets/images/covers/psycho/psycho.png");
+		type.set ("assets/images/covers/psycho/psycho.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/dialog.png", "assets/images/dialog.png");
+		type.set ("assets/images/dialog.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/icon.ico", "assets/images/icon.ico");
+		type.set ("assets/images/icon.ico", Reflect.field (AssetType, "binary".toUpperCase ()));
+>>>>>>> 1df5dde631b4a933f979d4f07aa178be6bdd1e69
 		
 		
 		#else
@@ -648,6 +677,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
+<<<<<<< HEAD
 @:keep class __ASSET__assets_data_fonts_nevis_ttf extends flash.text.Font { }
 @:keep class __ASSET__assets_data_text_index_main_txt extends flash.utils.ByteArray { }
 @:keep class __ASSET__assets_images_avatars_renato_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -662,6 +692,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 @:keep class __ASSET__assets_images_covers_psycho_psycho_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_dialog_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_icon_ico extends flash.utils.ByteArray { }
+=======
+class __ASSET__assets_data_fonts_nevis_ttf extends flash.text.Font { }
+class __ASSET__assets_data_text_index_main_txt extends flash.utils.ByteArray { }
+class __ASSET__assets_images_avatars_renato_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_avatars_rica_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_avatars_yan_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_banner_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_construction_jpg extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_covers_naomi_naomi_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_covers_naomi_star_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_covers_psycho_ball_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_covers_psycho_psycho_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_dialog_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_icon_ico extends flash.utils.ByteArray { }
+>>>>>>> 1df5dde631b4a933f979d4f07aa178be6bdd1e69
 
 
 #elseif html5
@@ -678,8 +723,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+<<<<<<< HEAD
 
 
 
 
 #end
+=======
+#end
+>>>>>>> 1df5dde631b4a933f979d4f07aa178be6bdd1e69

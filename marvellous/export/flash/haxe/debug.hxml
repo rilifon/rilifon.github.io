@@ -2,7 +2,11 @@
 -lib flixel
 -lib openfl
 -cp source
+<<<<<<< HEAD
 -D tools=1.3.2
+=======
+-D tools=1.2.9
+>>>>>>> 1df5dde631b4a933f979d4f07aa178be6bdd1e69
 -D FLX_NO_DEBUG
 -D web
 -swf-version 11.2

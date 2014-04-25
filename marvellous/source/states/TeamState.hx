@@ -62,8 +62,8 @@ class TeamState extends State {
 		devs = new FlxGroup();
 
 		devs.add(new RenatoImpl(400));
-		devs.add(new RicaImpl(650));
-		devs.add(new YanImpl(900));
+		devs.add(new RicaImpl(750));
+		devs.add(new YanImpl(1100));
 
 		add(new Banner());
 		add(new Navbar(300));
