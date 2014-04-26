@@ -15,10 +15,10 @@ private class RenatoImpl extends Developer {
 			"Those are a few words that a wise man once used to describe the magical scene that is Renato " +
 			"programming. A master of Java, Haxe and Visual Basic, a lover of the finest tea and arts, a companion " +
 			"of excellence in bridge, a friend of all living things. Those who are lucky to be embraced by his " +
-			"tenderness and kindness know that, even in the darker hours, Totoro will always face life with a smile " +
+			"tenderness and kindness know that, even in the darkest hours, Totoro will always face life with a smile " +
 			"in his face and a rose in his hand. He can create the most beautiful site while composing sweet melodies " +
-			"with his trusted violin. Give him a two-hour cd of 80's music and he will make the most astonishing game you'll ever play.\n" +
-			"More than a friend, his is an example for us all. Totoro, he will never give you up." , 
+			"with his trusted violin. Give him a two-hour cd of 80's music and he will make the most astonishing game you'll ever play.\n\n" +
+			"More than a friend, his is an example for us all. Totoro, he will never give you up.", 
 			"assets/images/avatars/renato.png");
 }
 
@@ -33,7 +33,7 @@ private class RicaImpl extends Developer {
 			"Just like Da Vinci, this strapping young man crosses the dimensions of art. " +
 			"With his cyan-colored eyes on a canvas and his fingers tightly strapped to a pencil " +
 			"he creates the most spectacular chef-d'oeuvre. And with his most accurate ears he " +
-			"can turn the most chaotic of sounds into a true melody.\n" + 
+			"can turn the most chaotic of sounds into a true melody.\n\n" + 
 			"This true maestro is envied by many. Admired by all.",
 			"assets/images/avatars/rica.png");
 }
@@ -50,7 +50,7 @@ private class YanImpl extends Developer {
 			"the most gruesome, poorly documented yet incredibly brilliant and efficient algorithms. " +
 			"Unstoppable, his only weakness is his heart. His friendly, forgiving and loveable character is " +
 			"what prevents him from becoming a mad scientist willing to sacrifice all humanity in exchange for " +
-			"a glass of ice cold Cotuba.\n" +
+			"a glass of ice cold Cotuba.\n\n" +
 			"Science has yet to study his mind. But for now, let his mind study science.",
 			"assets/images/avatars/yan.png");
 }
@@ -62,8 +62,8 @@ class TeamState extends State {
 		devs = new FlxGroup();
 
 		devs.add(new RenatoImpl(400));
-		devs.add(new RicaImpl(750));
-		devs.add(new YanImpl(1100));
+		devs.add(new RicaImpl(800));
+		devs.add(new YanImpl(1150));
 
 		add(new Banner());
 		add(new Navbar(300));

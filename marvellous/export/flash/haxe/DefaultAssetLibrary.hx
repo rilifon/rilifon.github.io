@@ -22,7 +22,6 @@ import openfl.utils.SystemPath;
 #end
 
 
-@:access(flash.media.Sound)
 class DefaultAssetLibrary extends AssetLibrary {
 	
 	
@@ -69,22 +68,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#elseif html5
 		
-<<<<<<< HEAD
-		addEmbed("assets/data/fonts/Nevis.ttf", "font", __ASSET__assets_data_fonts_nevis_ttf);
-		addExternal("assets/data/text/index/main.txt", "text", "assets/data/text/index/main.txt");
-		addExternal("assets/images/avatars/renato.png", "image", "assets/images/avatars/renato.png");
-		addExternal("assets/images/avatars/rica.png", "image", "assets/images/avatars/rica.png");
-		addExternal("assets/images/avatars/yan.png", "image", "assets/images/avatars/yan.png");
-		addExternal("assets/images/avatars/yan2.png", "image", "assets/images/avatars/yan2.png");
-		addExternal("assets/images/banner.png", "image", "assets/images/banner.png");
-		addExternal("assets/images/construction.jpg", "image", "assets/images/construction.jpg");
-		addExternal("assets/images/covers/naomi/naomi.png", "image", "assets/images/covers/naomi/naomi.png");
-		addExternal("assets/images/covers/naomi/star.png", "image", "assets/images/covers/naomi/star.png");
-		addExternal("assets/images/covers/psycho/ball.png", "image", "assets/images/covers/psycho/ball.png");
-		addExternal("assets/images/covers/psycho/psycho.png", "image", "assets/images/covers/psycho/psycho.png");
-		addExternal("assets/images/dialog.png", "image", "assets/images/dialog.png");
-		addExternal("assets/images/icon.ico", "binary", "assets/images/icon.ico");
-=======
 		className.set ("assets/data/fonts/Nevis.ttf", __ASSET__assets_data_fonts_nevis_ttf);
 		type.set ("assets/data/fonts/Nevis.ttf", Reflect.field (AssetType, "font".toUpperCase ()));
 		path.set ("assets/data/text/index/main.txt", "assets/data/text/index/main.txt");
@@ -95,6 +78,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/avatars/rica.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("assets/images/avatars/yan.png", "assets/images/avatars/yan.png");
 		type.set ("assets/images/avatars/yan.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("assets/images/avatars/yan2.png", "assets/images/avatars/yan2.png");
+		type.set ("assets/images/avatars/yan2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("assets/images/banner.png", "assets/images/banner.png");
 		type.set ("assets/images/banner.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("assets/images/construction.jpg", "assets/images/construction.jpg");
@@ -111,7 +96,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/dialog.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("assets/images/icon.ico", "assets/images/icon.ico");
 		type.set ("assets/images/icon.ico", Reflect.field (AssetType, "binary".toUpperCase ()));
->>>>>>> 1df5dde631b4a933f979d4f07aa178be6bdd1e69
 		
 		
 		#else
@@ -166,20 +150,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#end
 		
 	}
-	
-	
-	#if html5
-	private function addEmbed(id:String, kind:String, value:Dynamic):Void {
-		className.set(id, value);
-		type.set(id, Reflect.field(AssetType, kind.toUpperCase()));
-	}
-	
-	
-	private function addExternal(id:String, kind:String, value:String):Void {
-		path.set(id, value);
-		type.set(id, Reflect.field(AssetType, kind.toUpperCase()));
-	}
-	#end
 	
 	
 	public override function exists (id:String, type:AssetType):Bool {
@@ -247,10 +217,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		return cast (Type.createInstance (className.get (id), []), BitmapData);
 		
-		#elseif openfl_html5
-		
-		return BitmapData.fromImage (ApplicationMain.images.get (path.get (id)));
-		
 		#elseif js
 		
 		return cast (ApplicationMain.loaders.get (path.get (id)).contentLoaderInfo.content, Bitmap).bitmapData;
@@ -273,10 +239,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif flash
 		
 		return cast (Type.createInstance (className.get (id), []), ByteArray);
-		
-		#elseif openfl_html5
-		
-		return null;
 		
 		#elseif js
 		
@@ -340,18 +302,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if pixi
 		
-		return null;
+		//return null;		
 		
 		#elseif flash
 		
 		return cast (Type.createInstance (className.get (id), []), Sound);
-		
-		#elseif openfl_html5
-		
-		var sound = new Sound ();
-		sound.__buffer = true;
-		sound.load (new URLRequest (path.get (id)));
-		return sound; 
 		
 		#elseif js
 		
@@ -398,56 +353,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#else
 		
 		return new Sound (new URLRequest (path.get (id)), null, type.get (id) == MUSIC);
-		
-		#end
-		
-	}
-	
-	
-	public override function getText (id:String):String {
-		
-		#if js
-		
-		var bytes:ByteArray = null;
-		var data = ApplicationMain.urlLoaders.get (path.get (id)).data;
-		
-		if (Std.is (data, String)) {
-			
-			return cast data;
-			
-		} else if (Std.is (data, ByteArray)) {
-			
-			bytes = cast data;
-			
-		} else {
-			
-			bytes = null;
-			
-		}
-
-		if (bytes != null) {
-			
-			bytes.position = 0;
-			return bytes.readUTFBytes (bytes.length);
-			
-		} else {
-			
-			return null;
-		}
-		
-		#else
-		
-		var bytes = getBytes (id);
-		
-		if (bytes == null) {
-			
-			return null;
-			
-		} else {
-			
-			return bytes.readUTFBytes (bytes.length);
-			
-		}
 		
 		#end
 		
@@ -628,76 +533,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 	}
 	
 	
-	public override function loadText (id:String, handler:String -> Void):Void {
-		
-		#if js
-		
-		if (path.exists (id)) {
-			
-			var loader = new URLLoader ();
-			loader.addEventListener (Event.COMPLETE, function (event:Event) {
-				
-				handler (event.currentTarget.data);
-				
-			});
-			loader.load (new URLRequest (path.get (id)));
-			
-		} else {
-			
-			handler (getText (id));
-			
-		}
-		
-		#else
-		
-		var callback = function (bytes:ByteArray):Void {
-			
-			if (bytes == null) {
-				
-				handler (null);
-				
-			} else {
-				
-				handler (bytes.readUTFBytes (bytes.length));
-				
-			}
-			
-		}
-		
-		loadBytes (id, callback);
-		
-		#end
-		
-	}
-	
-	
 }
 
 
 #if pixi
 #elseif flash
 
-<<<<<<< HEAD
-@:keep class __ASSET__assets_data_fonts_nevis_ttf extends flash.text.Font { }
-@:keep class __ASSET__assets_data_text_index_main_txt extends flash.utils.ByteArray { }
-@:keep class __ASSET__assets_images_avatars_renato_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_avatars_rica_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_avatars_yan_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_avatars_yan2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_banner_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_construction_jpg extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_covers_naomi_naomi_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_covers_naomi_star_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_covers_psycho_ball_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_covers_psycho_psycho_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_dialog_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep class __ASSET__assets_images_icon_ico extends flash.utils.ByteArray { }
-=======
 class __ASSET__assets_data_fonts_nevis_ttf extends flash.text.Font { }
 class __ASSET__assets_data_text_index_main_txt extends flash.utils.ByteArray { }
 class __ASSET__assets_images_avatars_renato_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_avatars_rica_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_avatars_yan_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__assets_images_avatars_yan2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_banner_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_construction_jpg extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_covers_naomi_naomi_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -706,12 +553,11 @@ class __ASSET__assets_images_covers_psycho_ball_png extends flash.display.Bitmap
 class __ASSET__assets_images_covers_psycho_psycho_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_dialog_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__assets_images_icon_ico extends flash.utils.ByteArray { }
->>>>>>> 1df5dde631b4a933f979d4f07aa178be6bdd1e69
 
 
 #elseif html5
 
-@:keep class __ASSET__assets_data_fonts_nevis_ttf extends flash.text.Font { }
+class __ASSET__assets_data_fonts_nevis_ttf extends flash.text.Font { }
 
 
 
@@ -723,12 +569,8 @@ class __ASSET__assets_images_icon_ico extends flash.utils.ByteArray { }
 
 
 
-<<<<<<< HEAD
 
 
 
 
 #end
-=======
-#end
->>>>>>> 1df5dde631b4a933f979d4f07aa178be6bdd1e69
